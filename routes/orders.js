@@ -1,20 +1,20 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-router.get('/', function(req, res, next) {
-  res.send('returning orders');
+router.get('/', function(req, res) {
+    res.send(`Returning orders`);
 });
 
-router.post('/', function(req, res, next) {
-    res.send('creating order');
+router.post('/', function(req, res) {
+    res.send(`Creating order`);
 });
 
-router.put('/', function(req, res, next) {
-    res.send('updating order');
+router.put('/:orderId', function(req, res) {
+    res.send(`Updating order ${req.params.orderId}`);
 });
 
-router.delete('/', function(req, res, next) {
-    res.send('deleting order');
+router.delete('/:orderId', function(req, res) {
+    res.send(`Deleting order ${req.params.orderId}`);
 });
 
 module.exports = router;
