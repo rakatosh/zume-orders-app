@@ -1,0 +1,19 @@
+---
+  apiVersion: apps/v1beta1
+  kind: Deployment
+  metadata:
+    name: zume-orders-app
+  spec:
+    replicas: 1 # tells deployment to run 2 pods matching the template
+    template: # create pods using pod definition in this template
+      metadata:
+        labels:
+          app: zume-orders-app
+          type: webserver
+      spec:
+        containers:
+        - name: zume-orders-app
+          image: gcr.io/${PROJECTID}/zume-orders-app-k8s-demo:3.0
+          ports:
+          - containerPort: 80
+            name: http-server
