@@ -13,7 +13,7 @@
       spec:
         containers:
         - name: zume-orders-app
-          image: gcr.io/${PROJECTID}/zume-orders-app-k8s-demo:3.0
+          image: gcr.io/zume-ci/zume-orders-app-k8s-demo:6.0
           ports:
           - containerPort: 80
             name: http-server

@@ -13,4 +13,4 @@ kubectl get pods
 kubectl get pods --all-namespaces
 
 # Check Service
-kubectl get svc
+kubectl get svc --all-namespaces
