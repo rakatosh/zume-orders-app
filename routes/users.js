@@ -19,12 +19,13 @@ const router = express.Router();
  *   User:
  *     allOf:
  *       - $ref: '#/definitions/NewUser'
- *       - required:
- *         - id
- *       - properties:
- *         id:
- *           type: integer
- *           format: int64
+ *       - type: object
+ *         required:
+ *           - id
+ *         properties:
+ *           id:
+ *             type: integer
+ *             format: int64
  */
 
 /**
@@ -83,7 +84,8 @@ router.post('/', function(req, res) {
  *     parameters:
  *       - name: userId
  *         required: true
- *         description: The id of the user to delete
+ *         in: path
+ *         description: The id of the user to get
  *         schema:
  *           type: string
  *     responses:
@@ -111,6 +113,7 @@ router.get('/:userId', function(req, res) {
  *     parameters:
  *       - name: userId
  *         required: true
+ *         in: path
  *         description: The id of the user to delete
  *         schema:
  *           type: string
