@@ -14,7 +14,6 @@ const options = {
     apis: ['./routes/*.js'],
 };
 
-// Initialize swagger-jsdoc -> returns validated swagger spec in json format
 const swaggerDocument = swaggerJSDoc(options);
 
 
@@ -35,8 +34,12 @@ router.get('/', function(req, res) {
     res.send(`Welcome! This is home page. Host name ${process.env.HOSTNAME}`);
 });
 
+router.use('/api-docs', swaggerUi.serve);
 router.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
-router.use('/api-docs', swaggerUi.serve);
+router.get('/api-docs/swagger.json', (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(swaggerDocument);
+});
 
 module.exports = router;
