@@ -4,6 +4,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerJSDoc = require('swagger-jsdoc');
 
 const options = {
+    swagger: '2.0',
     definition: {
         info: {
             title: 'Zume orders app', // Title (required)

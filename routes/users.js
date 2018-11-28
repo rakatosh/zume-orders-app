@@ -60,7 +60,6 @@ router.get('/', function(req, res) {
  *         description: User object
  *         in:  body
  *         required: true
- *         type: string
  *         schema:
  *           $ref: '#/definitions/NewUser'
  *     responses:
@@ -86,17 +85,14 @@ router.post('/', function(req, res) {
  *         required: true
  *         in: path
  *         description: The id of the user to get
- *         schema:
- *           type: string
+ *         type: string
  *     responses:
  *       200:
  *         description: A single user.
- *         content:
- *           application/json:
- *           schema:
+ *         schema:
  *           $ref: '#/definitions/User'
  *       404:
- *          description: User with id not exist
+ *         description: User with id not exist
  */
 router.get('/:userId', function(req, res) {
     res.json({"id": req.param("userId")});
@@ -115,13 +111,12 @@ router.get('/:userId', function(req, res) {
  *         required: true
  *         in: path
  *         description: The id of the user to delete
- *         schema:
- *           type: string
+ *         type: string
  *     responses:
  *       204:
- *          description: Delete user by id
+ *         description: Delete user by id
  *       404:
- *          description: User with id not exist
+ *         description: User with id not exist
  */
 router.delete('/:userId', function(req, res) {
     res.status(204).send();

@@ -56,7 +56,6 @@ router.get('/', function(req, res) {
  *         description: Order object
  *         in:  body
  *         required: true
- *         type: string
  *         schema:
  *           $ref: '#/definitions/NewOrder'
  *     responses:
@@ -82,17 +81,14 @@ router.post('/', function(req, res) {
  *         required: true
  *         in: path
  *         description: The id of the order to get
- *         schema:
- *           type: string
+ *         type: string
  *     responses:
  *       200:
  *         description: A single order.
- *         content:
- *           application/json:
- *           schema:
- *           $ref: '#/definitions/Order'
+ *         schema:
+ *           s$ref: '#/definitions/Order'
  *       404:
- *          description: Order with id not exist
+ *        description: Order with id not exist
  */
 router.get('/:orderId', function(req, res) {
     res.json({"id": req.params.orderId});
@@ -111,13 +107,12 @@ router.get('/:orderId', function(req, res) {
  *         in: path
  *         required: true
  *         description: The id of the order to delete
- *         schema:
- *           type: string
+ *         type: string
  *     responses:
  *       204:
- *          description: Delete order by id
+ *         description: Delete order by id
  *       404:
- *          description: Order with id not exist
+ *         description: Order with id not exist
  */
 
 router.delete('/:orderId', function(req, res) {
