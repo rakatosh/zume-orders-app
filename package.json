@@ -8,6 +8,8 @@
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "express": "~4.16.0",
-    "http-errors": "~1.6.2"
+    "http-errors": "~1.6.2",
+    "swagger-jsdoc": "^3.2.3",
+    "swagger-ui-express": "^4.0.1"
   }
 }
